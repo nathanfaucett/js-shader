@@ -36,12 +36,14 @@ function Shader() {
 TextAsset.extend(Shader, "shader.Shader");
 ShaderPrototype = Shader.prototype;
 
-ShaderPrototype.construct = function(name, src, vertex, fragment) {
+ShaderPrototype.construct = function(options) {
 
-    TextAssetPrototype.construct.call(this, name, src);
+    TextAssetPrototype.construct.call(this, options);
 
-    if (vertex && fragment) {
-        this.set(vertex, fragment);
+    options = options || {};
+
+    if (options.vertex && options.fragment) {
+        this.set(options.vertex, options.fragment);
     }
 
     return this;

@@ -3,7 +3,12 @@ var tape = require("tape"),
 
 
 tape("shader", function(assert) {
-    var shader = Shader.create("shader", "", "void main() {}", "void main() {}");
+    var shader = Shader.create({
+        name: "shader",
+        src: null,
+        vertex: "void main() {}",
+        fragment: "void main() {}"
+    });
 
     assert.equal(shader.vertex(), "\nvoid main() {}");
     assert.equal(shader.fragment(), "\nvoid main() {}");
