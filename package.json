@@ -32,7 +32,7 @@
     "zuul": "^3.11.0"
   },
   "dependencies": {
-    "@nathanfaucett/assets": "git@github.com:nathanfaucett/js-assets.git",
+    "@nathanfaucett/assets": "git://github.com/nathanfaucett/js-assets.git",
     "@nathanfaucett/array-map": "0.0.1",
     "@nathanfaucett/is_array": "0.0.1",
     "@nathanfaucett/is_null_or_undefined": "0.0.1",
