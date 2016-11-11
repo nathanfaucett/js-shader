@@ -76,6 +76,26 @@ ShaderPrototype.set = function(vertex, fragment) {
     return this;
 };
 
+ShaderPrototype.toJSON = function(json) {
+
+    json = TextAssetPrototype.toJSON.call(this, json);
+
+    json.vertex = this.vertex;
+    json.fragment = this.fragment;
+
+    return json;
+};
+
+ShaderPrototype.fromJSON = function(json) {
+
+    TextAssetPrototype.fromJSON.call(this, json);
+
+    this.templateVariables.length = 0;
+    this.set(json.vertex, json.fragment);
+
+    return this;
+};
+
 function Shader_compile(_this, shader, type) {
     var templateVariables = _this.templateVariables,
         shaderChunks = [],
